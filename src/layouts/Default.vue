@@ -10,7 +10,7 @@
         <a href="javascript:void(0);" target="_blank" class="btn">GitHub主页</a>
         <a href="javascript:void(0);" target="_blank" class="btn">博客源码</a>
       </div>
-      <div
+      <!-- <div
         v-for="(item, index) in randomIcon"
         :key="'ri' + index"
         :style="
@@ -24,7 +24,7 @@
         <font :style="'font-size: ' + item.size + 'px;color:#fff;'">
           <b>♪</b>
         </font>
-      </div>
+      </div> -->
       <div class="touch-bar box"></div>
     </header>
     <main class="main-content">
@@ -108,35 +108,10 @@ query {
 export default {
   data() {
     return {
-      randomIcon: [],
     };
   },
   mounted() {
-    this.$nextTick(() => {
-      let width = window.innerWidth;
-      for (let i = 0; i < 12; i++) {
-        let temp = {};
-        let left = this.randomInt(10, width - 310);
-        if (left > width / 2 - 150) {
-          left += 300;
-        }
-        temp["left"] = left;
-        temp["top"] = this.randomInt(20, 300);
-        temp["size"] = this.randomInt(20, 40);
-        this.randomIcon.push(temp);
-      }
-    });
-  },
-  methods: {
-    randomInt(s, e) {
-      let d = e - s;
-      if (d < 0) {
-        return s;
-      }
-      let r = Math.random() * d + s;
-      r = Number.parseInt(r, 10);
-      return r;
-    },
+   
   },
 };
 </script>

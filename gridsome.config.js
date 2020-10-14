@@ -20,6 +20,5 @@ module.exports = {
         component: './src/templates/Blog.vue'
       }
     ],
-  },
-  pathPrefix: process.env.NODE_ENV === 'production' ? '/gridsome-blog/' : '/',
+  }
 }
