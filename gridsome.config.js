@@ -22,5 +22,4 @@ module.exports = {
     ],
   },
   pathPrefix: process.env.NODE_ENV === 'production' ? '/gridsome-blog/' : '/',
-  outputDir: 'docs'
 }
