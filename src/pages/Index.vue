@@ -16,7 +16,7 @@
         <pre style="font-family: '微软雅黑'">{{this.$page.allGists.edges[0].node.description}}</pre>
       </div>
       <div
-        v-html="this.$markdown(this.$page.allGists.edges[0].node.title.content)"
+        v-html="mdToHtml(this.$page.allGists.edges[0].node.title.content)"
         class="markdown-body"
         style="padding-top: 20px"
       ></div>
@@ -46,9 +46,16 @@ query {
 </page-query>
 
 <script>
+import MarkdownIt from 'markdown-it'
+const md = new MarkdownIt();
 export default {
   metaInfo: {
     title: "最新动态",
   },
+  methods: {
+    mdToHtml (markdown) {
+      return md.render(markdown)
+    }
+  }
 };
 </script>
